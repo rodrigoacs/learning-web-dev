@@ -1,0 +1,2 @@
+em uma função tradicional o this pode variar
+em uma arrow function ele não varia

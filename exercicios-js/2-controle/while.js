@@ -1,0 +1,15 @@
+function intAleatorio(min, max) {
+    const valor = Math.random() * (max - min) + min;
+    return Math.floor(valor);
+}
+
+let opcao = 0;
+let contador = 0;
+
+while (opcao != -1) {
+    opcao = intAleatorio(-1, 10);
+    console.log(opcao);
+    contador++;
+}
+
+console.log(`foram gerados ${contador} numeros`);
