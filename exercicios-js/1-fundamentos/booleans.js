@@ -27,5 +27,5 @@ console.log(!!(isAtivo = false));
 
 let nome = '';
 /* o operador OU vai retornar o valor verdadeiro,
-   nomo não há nada em nome retornará "nome não informado" */
+   como não há nada em nome retornará "nome não informado" */
 console.log(nome || 'Nome não informado');
