@@ -28,5 +28,3 @@ function qtdeNotas(valor) {
 qtdeNotas(18);
 qtdeNotas(85);
 qtdeNotas(2341);
-
-
