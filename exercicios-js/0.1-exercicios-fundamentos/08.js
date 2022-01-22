@@ -8,7 +8,7 @@ function desempenhoPedro(pontuacoes) {
     let recorde = arrayPontos[0];
     let piorPontuacao = arrayPontos[0];
 
-    for (const i in arrayPontos) {
+    for (let i in arrayPontos) {
         arrayPontos[i] = parseInt(arrayPontos[i]);
         if (arrayPontos[i] > recorde) {
             recorde = arrayPontos[i];

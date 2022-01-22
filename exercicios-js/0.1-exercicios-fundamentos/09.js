@@ -19,4 +19,4 @@ function sistemaNotas(nota) {
 
 }
 
-sistemaNotas(90);
+sistemaNotas(87);
