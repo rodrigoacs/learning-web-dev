@@ -1,0 +1,88 @@
+<div class="center">
+    <video id="meuVideo" width="800" height="450" controls autoplay controlsList="nodownload">
+        <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+    </video>
+
+    <div wm-progresso="meuVideo" class="progresso">
+        <div></div>
+    </div>
+
+    <div class="buttons">
+        <button wm-play="meuVideo">Play</button>
+        <button wm-pause="meuVideo" class="pause">Pause</button>
+    </div>
+</div>
+
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        vertical-align: baseline;
+        list-style: none;
+        border: 0
+    }
+
+    .center {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .buttons {
+        width: 800px;
+    }
+
+    .progresso {
+        width: 800px;
+        height: 20px;
+        border: solid 1px #444;
+    }
+
+    .progresso>div {
+        background-color: red;
+        color: rgb(0, 0, 0);
+        text-align: left;
+        font-weight: bold;
+        height: 100%;
+    }
+</style>
+
+<script>
+    meuVideo.oncontextmenu = () => false;
+    meuVideo.controls = false;
+
+    document.querySelector('[wm-play]').onclick = (e) => {
+        meuVideo.play()
+    }
+
+    document.querySelector('[wm-pause]').onclick = () => meuVideo.pause()
+
+    setInterval(() => {
+        const percentual = (meuVideo.currentTime / meuVideo.duration) * 100
+        const divBarra = document.getElementsByClassName('progresso')[0].firstElementChild
+        divBarra.style.width = percentual + '%'
+        divBarra.innerHTML = `&nbsp;0:${parseInt(meuVideo.currentTime)}&nbsp;/&nbsp;0:${parseInt(meuVideo.duration)}`
+    }, 1);
+
+
+    //minha progressBar
+    /*const progressBar = document.querySelector('[wm-progress]')
+    const classProgresso = document.getElementsByClassName('progresso')[0].firstElementChild
+    let duracao = 0
+    let i = 0
+    meuVideo.onloadedmetadata = function () {
+        duracao = parseInt(meuVideo.duration)
+    }
+    function barraProgresso() {
+        i++
+        if (i < duracao + 1) {
+            classProgresso.style.width = (100 / duracao) * i + '%'
+        }
+        setTimeout(barraProgresso, 1000)
+    }*/
+
+</script>
