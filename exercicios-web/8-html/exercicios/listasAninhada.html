@@ -1,11 +1,10 @@
-<h1>projeto</h1>
-
-
+<h1>Projeto</h1>
 <ul class="tree">
-    <li> <span acsfolder>backend</span>
+    <li>
+        <span pastas>Backend</span>
         <ul>
             <li>
-                <span acsfolder>app</span>
+                <span pastas>app</span>
                 <ul>
                     <li>produto.js</li>
                     <li>usuario.js</li>
@@ -13,34 +12,39 @@
                 </ul>
             </li>
             <li>
-                <span acsfolder>config</span>
-                <ul>
-                    <li>banco.js</li>
-                    <li>rotas.js</li>
-                    <li>servidor.js</li>
-                </ul>
+                <span pastas>config</span>
             </li>
+            <ul>
+                <li>banco.js</li>
+                <li>rotas.js</li>
+                <li>servidor.js</li>
+            </ul>
         </ul>
     </li>
-    <li> <span acsfolder>frontend</span>
+    <li><span pastas>frontend</span>
         <ul>
-            <li> <span acsfolder>public</span>
+            <li>
+                <span pastas>public</span>
                 <ul>
                     <li>app.css</li>
                     <li>app.js</li>
-                    <li>app.html</li>
+                    <li>index.html</li>
                 </ul>
             </li>
         </ul>
     </li>
 </ul>
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
 <script>
-    document.querySelectorAll('[acsfolder]').forEach(folder => {
-        folder.onclick = function (e) {
-            let ul = folder.nextElementSibling
-            let d = ul.style.display
-            ul.style.display = d === 'none' ? 'block' : 'none'
+    const algo = document.querySelectorAll('[pastas]')
+    algo.forEach(pastas => {
+        pastas.onclick = function (e) {
+            const prox = pastas.nextElementSibling
+            if (prox.style.display === 'none') {
+                prox.style.display = 'block'
+            } else prox.style.display = 'none'
         }
     })
+
 </script>
-<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
